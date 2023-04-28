@@ -1,0 +1,87 @@
+.featured{
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    background-image: url(./images/bg.png);
+    background-repeat: no-repeat;
+    color: white;
+    overflow: hidden;
+    .container{
+        width: 1100px;
+        display: flex;
+        align-items: center;
+        h1{
+            font-family: 'Lexend', sans-serif;
+            font-size: 58px;
+            font-weight: 400;
+        }
+        h2{
+            font-family: 'Lexend', sans-serif;
+            font-size: 52px;
+            font-weight: 400;
+        }
+        .awesome{            
+            color: #0D99FF;
+        }
+        .left{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            height: 350px;
+            .search{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #fff;
+                border-radius: 5px;
+                .searchInput{
+                    display: flex;
+                    align-items: center;
+                    input{
+                        font-size: medium;
+                    }
+                    .searchImage{
+                        width: auto;
+                        height: 20px;
+                        margin: 10px;                        
+                    }
+
+                    input{
+                        border: none;
+                        outline: none;
+                        
+                    }
+
+                }
+                button{
+                    width: 85px;
+                    height: 45px;
+                    border: none;
+                    background-color: #0D99FF;
+                    color: white;
+                    cursor: pointer;
+
+                }
+            }
+            .popular{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+              
+                button{
+                    background: transparent;
+                    border: 1px solid white;
+                    color: white;
+                    padding: 2px 7px;
+                    border-radius: 5px;
+
+                }
+
+            }
+        }
+        .right{
+            padding-left: 100px;
+        }
+         
+    }
+}
