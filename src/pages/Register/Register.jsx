@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import upload from "../../utils/upload";
 import "./Register.scss";
 import newRequest from "../../utils/newRequest";
 import { useNavigate } from "react-router-dom";
 
 function Register() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [file, setFile] = useState(null);
   const [user, setUser] = useState({
     username: "",
@@ -17,8 +20,6 @@ function Register() {
   });
 
   const navigate = useNavigate();
-
-  console.log(user);
 
   const handleChange = (e) => {
     setUser((prev) => {
@@ -40,7 +41,7 @@ function Register() {
         ...user,
         img: url,
       });
-      navigate("/");
+      navigate("/login")
     } catch (err) {
       console.log(err);
     }
@@ -54,7 +55,7 @@ function Register() {
           <input
             name="username"
             type="text"
-            placeholder="johndoe"
+            placeholder=""
             onChange={handleChange}
           />
           <label htmlFor="">Email</label>
@@ -81,7 +82,9 @@ function Register() {
           <h1>I want to become a seller</h1>
           <div className="toggle">
             <label htmlFor="">Activate the seller account</label>
-            <input type="checkbox" onChange={handleSeller} />
+            <label className="switch">
+              <input type="checkbox" onChange={handleSeller} />
+            </label>
           </div>
           <label htmlFor="">Phone Number</label>
           <input

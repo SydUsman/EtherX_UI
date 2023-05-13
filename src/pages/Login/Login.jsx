@@ -1,10 +1,12 @@
-import React from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Login.scss";
 import newRequest from "../../utils/newRequest";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+function Login() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
@@ -15,42 +17,51 @@ const Login = () => {
     e.preventDefault();
     try {
       const res = await newRequest.post("/auth/login", { username, password });
-      // console.log(res.data);
+      let info = res.data;
+      let token = info.accessToken;
       localStorage.setItem("currentUser", JSON.stringify(res.data));
-
-      // navigate("/")
-      // console.log(res.headers);      
+      // Usman's Testing Purpose Don't Uncomment
       // console.log(res.data);
-      // console.log(document.cookie);
+      // console.log(token);
+      // Here i have set the cookie using document.cookie
+      document.cookie = `accessToken = ${token} path=/`;
+
+      navigate("/");
     } catch (err) {
       setError(err);
-      console.log(error.response.data);
     }
   };
 
   return (
     <div className="login">
-      <form onSubmit={handleSubmit}>
-        <h1>Sign in</h1>
-        <label htmlFor="">Username</label>
-        <input
-          name="username"
-          type="text"
-          placeholder="johndoe"
-          onChange={(e) => setUsername(e.target.value)}
-        />
+      <div className="left">
+        {/* image is placed on left side  */}
+      </div>
+      <div className="right">
+        <div className="container">
+          <form onSubmit={handleSubmit}>
+            <h1>Sign in</h1>
+            <label htmlFor="">Username</label>
+            <input
+              name="username"
+              type="text"
+              placeholder=""
+              onChange={(e) => setUsername(e.target.value)}
+            />
 
-        <label htmlFor="">Password</label>
-        <input
-          name="password"
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">Login</button>
-        {error && error.message}
-      </form>
+            <label htmlFor="">Password</label>
+            <input
+              name="password"
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <button type="submit">Login</button>
+            <span>{error && error.message}</span>
+          </form>
+        </div>
+      </div>
     </div>
   );
-};
+}
 
 export default Login;

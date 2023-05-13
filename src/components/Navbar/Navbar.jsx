@@ -29,6 +29,7 @@ const Navbar = () => {
     try{
       await newRequest.post("/auth/logout")
       localStorage.setItem("currentUser", null);
+      document.cookie = `accessToken=${null};expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;`;
       navigate("/")
 
     }catch(err){
@@ -47,11 +48,11 @@ const Navbar = () => {
           <span className="dot">X</span>
         </div>
         <div className="links">
-          <span>EtherX Business</span>
-          <span>Explore</span>
-          <span>English</span>
-          <Link to="/login" className="link">Sign In</Link>
-          {!currentUser?.isSeller && <span>Become a seller</span>}
+          <span>Explore</span>          
+          <span>Community</span>          
+          <span>Blog</span>          
+          {/* {!currentUser?.isSeller && <span>Support</span>} */}
+          {!currentUser && <Link to="/login" className="link">Login</Link>}
           {!currentUser && <Link to="/register"><button>Join</button></Link>}
           {currentUser && (
             <div className="user" onClick={() => setOpen(!open)}>

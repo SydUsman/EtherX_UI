@@ -29,6 +29,7 @@
             gap: 10px;
             height: 350px;
             .search{
+                margin-top: 10px;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -77,6 +78,10 @@
 
                 }
 
+            }
+            .typewriter{
+                margin-top: 30px;
+                font-size: large;
             }
         }
         .right{

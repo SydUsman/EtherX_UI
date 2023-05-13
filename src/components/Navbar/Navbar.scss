@@ -76,9 +76,10 @@
         border-radius: 3.5px;
         border: 1px solid white;
         cursor: pointer;
-        background-color: transparent;
+        background-color: #0D99FF;
+        border-color: #0D99FF;
         &:hover {
-          background-color: #0D99FF;
+          background-color: #37aafc;
           border-color: #0D99FF;
         }
       }

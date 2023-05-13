@@ -34,8 +34,8 @@ function Footer() {
             <h2>Support</h2>
             <span>Help & Support</span>
             <span>Trust & Safety</span>
-            <span>Selling on Liverr</span>
-            <span>Buying on Liverr</span>
+            <span>Selling on EtherX</span>
+            <span>Buying on EtherX</span>
           </div>
           <div className="item">
             <h2>Community</h2>
@@ -53,14 +53,14 @@ function Footer() {
           </div>
           <div className="item">
             <h2>More From Fiverr</h2>
-            <span>Liverr Business</span>
-            <span>Liverr Pro</span>
-            <span>Liverr Logo Maker</span>
-            <span>Liverr Guides</span>
+            <span>EtherX Business</span>
+            <span>EtherX Pro</span>
+            <span>EtherX Logo Maker</span>
+            <span>EtherX Guides</span>
             <span>Get Inspired</span>
-            <span>Liverr Select</span>
+            <span>EtherX Select</span>
             <span>ClearVoice</span>
-            <span>Liverr Workspace</span>
+            <span>EtherX Workspace</span>
             <span>Learn</span>
             <span>Working Not Working</span>
           </div>
@@ -69,7 +69,7 @@ function Footer() {
         <div className="bottom">
           <div className="left">
             <h2>EtherX</h2>
-            <span>© EtherX International Ltd. 2023</span>
+            <span>© Ether-X International Ltd. 2023</span>
           </div>
           <div className="right">
             <div className="social">
@@ -78,16 +78,7 @@ function Footer() {
               <img src="/images/linkedin.png" alt="" />
               <img src="/images/pinterest.png" alt="" />
               <img src="/images/instagram.png" alt="" />
-            </div>
-            <div className="link">
-              <img src="/images/language.png" alt="" />
-              <span>English</span>
-            </div>
-            <div className="link">
-              <img src="/images/coin.png" alt="" />
-              <span>USD</span>
-            </div>
-            <img src="/images/accessibility.png" alt="" />
+            </div>           
           </div>
         </div>
       </div>

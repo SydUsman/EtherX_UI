@@ -4,7 +4,7 @@ import CatCard from "../SliderCard/CatCard";
 import { cards } from "../../data";
 import "./Slider.scss";
 // Import Swiper styles
-import "swiper/css";
+import "swiper/css"; 
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
@@ -33,6 +33,7 @@ const Slider = () => {
                     title={card.title}
                     desc={card.desc}
                     image={card.img}
+                    link={card.link}
                   />
                 </SwiperSlide>
                 ;
